@@ -366,3 +366,62 @@ module.exports.getMoviesByActor= async (event) => {
     console.log(error);
   }
 };
+
+module.exports.getTopRatedMovieList = async (event) => {
+  const baseURL="https://api.themoviedb.org/3/";
+  const url = baseURL+"movie/top_rated?api_key=0b12f23e4febcbc3cfa1544d420ca7ea&language=en-US&page=1";
+  topMovieName=" ";
+  try {
+    const response = await axios.get(url);
+    const data = response.data;
+    for (var i=0;i<data.results.length;i++){
+      var topMovieName=topMovieName+data.results[i].title+"\n" ;
+      topMovieName=topMovieName.replace(/\n/g, "  ");
+    }
+   
+    return {
+      "sessionAttributes": {},
+      "dialogAction": {
+        "type": "Close",//close means LeEX doesn't expect anyresponse back from user
+        "fulfillmentState": "Fulfilled",
+        "message": {
+          "contentType": "PlainText",
+          "content":" The list of top rated movies in the database are:  " + topMovieName
+        }
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports.getMovieDetail = async (event) => {
+  const key = event.currentIntent.slots["key"];
+  const baseURL="https://api.themoviedb.org/3/";
+  //const key="Joker";
+  
+  const url = baseURL+"search/movie?api_key=0b12f23e4febcbc3cfa1544d420ca7ea&query="+key;
+  var MovieDetail=" ";
+  try {
+    const response = await axios.get(url);
+    const data = response.data;
+    
+      var MovieDetail=MovieDetail+"From the year "+"\n"+data.results[0].release_date+"is as follows: "+data.results[0].overview+"\n" ;
+      MovieDetail=MovieDetail.replace(/\n/g, "  ");
+    
+   
+    return {
+      "sessionAttributes": {},
+      "dialogAction": {
+        "type": "Close",//close means LeEX doesn't expect anyresponse back from user
+        "fulfillmentState": "Fulfilled",
+        "message": {
+          "contentType": "PlainText",
+          "content":" Movie plot of:  "+key+ MovieDetail
+        }
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};

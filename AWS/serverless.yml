@@ -24,3 +24,7 @@ functions:
     handler: handler.getMovieDetails
   getMoviesByActor:
     handler: handler.getMoviesByActor
+  getMovieDetail:
+    handler: handler.getMovieDetail
+  getTopRatedMovieList:
+    handler: handler.getTopRatedMovieList
