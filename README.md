@@ -15,7 +15,7 @@ This repository will provide you the lambda functions which are needed for AWS l
 First clone the respository to you personal computer 
 
 ```html
- git clone 
+ git clone https://github.com/Tarannu/Movie-Recommendation-Chatbot-Using-AWS-Lex.git
 ```
 Then follow the following tutorial to understand how to use our code to manupulate movieDB.API to create a chatbot web application hosted in AMAZON AWS.
 
