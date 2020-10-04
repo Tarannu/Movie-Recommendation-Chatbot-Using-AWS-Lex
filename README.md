@@ -6,11 +6,12 @@ This repository will provide you the lambda functions which are needed for AWS l
 - Node.JS
 - REST API
 - JSON
+- TypeScript
 - Amazon AWS LEX
 - Serverless
 - Angular.JS
 - HTML
-- CSS
+- SCSS
 ## How To Use
 First clone the respository to you personal computer 
 
