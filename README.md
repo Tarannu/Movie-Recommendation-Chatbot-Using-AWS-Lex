@@ -21,4 +21,4 @@ Then follow the following tutorial to understand how to use our code to manupula
 
 ### Links to check out
 
-- YouTube - [Tutorial] (https://www.youtube.com/watch?v=NWK6aT0ZENw)
+- YouTube - [Tutorial](https://www.youtube.com/watch?v=NWK6aT0ZENw)
