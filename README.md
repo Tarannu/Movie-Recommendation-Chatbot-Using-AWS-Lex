@@ -12,6 +12,7 @@ This repository will provide you the lambda functions which are needed for AWS l
 - Angular.JS
 - HTML
 - SCSS
+- CSS
 ## How To Use
 First clone the respository to you personal computer 
 
